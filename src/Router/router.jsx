@@ -4,6 +4,7 @@ import Layout from "../Main/Layout";
 import Brands from "../Pages/Brands";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import Coupon from "../Pages/Coupon";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
       {
         path: "/brands",
         element: <Brands></Brands>,
+        loader: () => fetch("/fakedata.json"),
+      },
+      {
+        path: "/brands/:id",
+        element: <Coupon></Coupon>,
         loader: () => fetch("/fakedata.json"),
       },
 

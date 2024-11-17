@@ -2,6 +2,7 @@
 
 import { FaStar } from "react-icons/fa"; // React Icons (for stars)
 import ReactRating from "react-rating";
+import { Link } from "react-router-dom";
 const SinglecolCard = ({ data }) => {
   return (
     <div className="grid grid-cols-1 w-10/12 mx-auto gap-6 py-4">
@@ -48,9 +49,11 @@ const SinglecolCard = ({ data }) => {
             </div>
             {/* 3 */}
             <div className="text-center">
-              <button className="btn text-white bg-green-600">
-                View Coupons
-              </button>
+              <Link to={`/brands/${brand._id}`}>
+                <button className="btn text-white bg-green-600">
+                  View Coupons
+                </button>
+              </Link>
               <p>Coupons:</p>
             </div>
           </div>
