@@ -1,0 +1,262 @@
+[
+  {
+    "_id": "1",
+    "brand_name": "Tech Haven",
+    "rating": 4.8,
+    "description": "Tech Haven is your ultimate destination for cutting-edge electronics and gadgets. We offer the latest products to enhance your tech experience, whether for work or play. Explore exclusive discounts and fast shipping!",
+    "brand_logo": "https://i.ibb.co.com/2jyLJ3K/Tech-Haven.webp",
+    "coupons": [
+      {
+        "coupon_code": "TECH10",
+        "description": "Get 10% off on all electronics.",
+        "expiry_date": "2024-12-31",
+        "condition": "Minimum purchase of $100.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "SHIPFREE",
+        "description": "Free shipping on orders over $50.",
+        "expiry_date": "2024-11-30",
+        "condition": "No minimum purchase.",
+        "coupon_type": "Shipping"
+      }
+    ],
+    "shop_link": "https://techhaven.com",
+    "category": "Electronics",
+    "isSaleOn": true
+  },
+  {
+    "_id": "2",
+    "brand_name": "Style Loft",
+    "rating": 4.5,
+    "description": "Style Loft offers a wide range of trendy and stylish fashion apparel for every occasion. Whether you’re looking for casual wear, formal attire, or accessories, we have something to suit your personal style.",
+    "brand_logo": "https://i.ibb.co.com/NN4JvV4/Style-Loft.webp",
+    "coupons": [
+      {
+        "coupon_code": "STYLE20",
+        "description": "Flat 20% off on new arrivals.",
+        "expiry_date": "2024-12-15",
+        "condition": "Valid on clothing items only.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "BOGO50",
+        "description": "Buy one, get 50% off on the second item.",
+        "expiry_date": "2024-11-30",
+        "condition": "Applicable to accessories.",
+        "coupon_type": "BOGO"
+      }
+    ],
+    "shop_link": "https://styleloft.com",
+    "category": "Fashion",
+    "isSaleOn": false
+  },
+  {
+    "_id": "3",
+    "brand_name": "Fit Gear Pro",
+    "rating": 4.7,
+    "description": "Fit Gear Pro specializes in providing high-quality fitness gear and equipment to help you achieve your health goals. From fitness trackers to home gym essentials, we provide everything you need to stay fit.",
+    "brand_logo": "https://i.ibb.co.com/FzGxspC/Fit-Gear-Pro.webp",
+    "coupons": [
+      {
+        "coupon_code": "FIT15",
+        "description": "Save 15% on fitness trackers.",
+        "expiry_date": "2025-01-01",
+        "condition": "Valid on select brands.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREEBOTTLE",
+        "description": "Get a free water bottle with orders over $75.",
+        "expiry_date": "2024-12-31",
+        "condition": "While supplies last.",
+        "coupon_type": "Free Gift"
+      }
+    ],
+    "shop_link": "https://fitgearpro.com",
+    "category": "Fitness",
+    "isSaleOn": false
+  },
+  {
+    "_id": "4",
+    "brand_name": "Book Nook",
+    "rating": 4.9,
+    "description": "Book Nook is the perfect place to discover new books and authors. Whether you're into fiction, non-fiction, or graphic novels, we have something for every reader. Explore our collections and enjoy exclusive offers.",
+    "brand_logo": "https://i.ibb.co.com/pnm6YLD/Book-Nook.webp",
+    "coupons": [
+      {
+        "coupon_code": "READMORE",
+        "description": "Buy 2 books and get 1 free.",
+        "expiry_date": "2024-11-30",
+        "condition": "Lowest-priced book is free.",
+        "coupon_type": "BOGO"
+      },
+      {
+        "coupon_code": "FIRSTREAD",
+        "description": "10% off your first purchase.",
+        "expiry_date": "2025-01-01",
+        "condition": "New customers only.",
+        "coupon_type": "Discount"
+      }
+    ],
+    "shop_link": "https://booknook.com",
+    "category": "Books",
+    "isSaleOn": false
+  },
+  {
+    "_id": "5",
+    "brand_name": "Home Essentials",
+    "rating": 4.6,
+    "description": "Home Essentials provides a variety of products to help make your house feel more like home. From decor to furniture, our selection offers high-quality items to suit every taste and budget.",
+    "brand_logo": "https://i.ibb.co.com/kcbdDBH/Home-Essentials.webp",
+    "coupons": [
+      {
+        "coupon_code": "SAVE20",
+        "description": "20% off on home decor items.",
+        "expiry_date": "2024-12-20",
+        "condition": "Minimum spend of $50.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREESHIPHOME",
+        "description": "Free shipping on all orders.",
+        "expiry_date": "2024-11-30",
+        "condition": "No conditions apply.",
+        "coupon_type": "Shipping"
+      }
+    ],
+    "shop_link": "https://homeessentials.com",
+    "category": "Home",
+    "isSaleOn": false
+  },
+  {
+    "_id": "6",
+    "brand_name": "Beauty Bliss",
+    "rating": 4.4,
+    "description": "Beauty Bliss offers premium beauty products, from skincare to cosmetics, designed to enhance your natural beauty. Whether you need a skincare routine or a makeup update, we have the products for you.",
+    "brand_logo": "https://i.ibb.co.com/qp0yr5X/Beauty-Bliss.webp",
+    "coupons": [
+      {
+        "coupon_code": "BLISS25",
+        "description": "Flat 25% off on skincare items.",
+        "expiry_date": "2024-12-10",
+        "condition": "Valid on select items.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "TRYME",
+        "description": "Free sample kit on orders above $40.",
+        "expiry_date": "2024-11-30",
+        "condition": "Limited to one per customer.",
+        "coupon_type": "Free Gift"
+      }
+    ],
+    "shop_link": "https://beautybliss.com",
+    "category": "Beauty",
+    "isSaleOn": true
+  },
+  {
+    "_id": "7",
+    "brand_name": "Kitchen Konnect",
+    "rating": 4.3,
+    "description": "Kitchen Konnect is your go-to source for top-quality kitchen tools and appliances. Whether you're a professional chef or a home cook, we have everything you need to make your culinary creations.",
+    "brand_logo": "https://i.ibb.co.com/T1vWznX/Kitchen-Konnect.webp",
+    "coupons": [
+      {
+        "coupon_code": "KITCHEN10",
+        "description": "10% off on cookware sets.",
+        "expiry_date": "2024-12-25",
+        "condition": "Valid on orders over $50.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "BONAPPETIT",
+        "description": "Free recipe e-book with any purchase.",
+        "expiry_date": "2024-11-30",
+        "condition": "While supplies last.",
+        "coupon_type": "Free Gift"
+      }
+    ],
+    "shop_link": "https://kitchenkonnect.com",
+    "category": "Kitchen",
+    "isSaleOn": false
+  },
+  {
+    "_id": "8",
+    "brand_name": "Toy Chest",
+    "rating": 4.8,
+    "description": "Toy Chest is the ultimate destination for fun and educational toys. From interactive learning toys to imaginative playsets, we offer a wide selection of products designed to engage and entertain children of all ages.",
+    "brand_logo": "https://i.ibb.co.com/9WtKrXv/Toy-Chest.webp",
+    "coupons": [
+      {
+        "coupon_code": "PLAY20",
+        "description": "20% off on all toys.",
+        "expiry_date": "2024-12-31",
+        "condition": "No minimum purchase required.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREETOY",
+        "description": "Get a free toy with orders over $100.",
+        "expiry_date": "2024-11-30",
+        "condition": "Valid on select items.",
+        "coupon_type": "Free Gift"
+      }
+    ],
+    "shop_link": "https://i.ibb.co.com/9WtKrXv/Toy-Chest.webp",
+    "category": "Toys",
+    "isSaleOn": true
+  },
+  {
+    "_id": "9",
+    "brand_name": "Outdoor Gear Co.",
+    "rating": 4.5,
+    "description": "Outdoor Gear Co. provides the best gear for your outdoor adventures. From tents and sleeping bags to backpacks and camping accessories, we offer everything you need for your next adventure.",
+    "brand_logo": "https://i.ibb.co.com/jJYCKx3/Outdoor-Gear-Co.webp",
+    "coupons": [
+      {
+        "coupon_code": "CAMP10",
+        "description": "10% off on camping equipment.",
+        "expiry_date": "2024-12-31",
+        "condition": "Valid on tents and sleeping bags only.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "TRAVELFREE",
+        "description": "Free travel pouch with any backpack purchase.",
+        "expiry_date": "2024-11-30",
+        "condition": "Limited stock available.",
+        "coupon_type": "Free Gift"
+      }
+    ],
+    "shop_link": "https://i.ibb.co.com/jJYCKx3/Outdoor-Gear-Co.webp",
+    "category": "Outdoors",
+    "isSaleOn": true
+  },
+  {
+    "_id": "10",
+    "brand_name": "Pet World",
+    "rating": 4.6,
+    "description": "Pet World is your go-to source for all things pet-related. Whether you need food, toys, or accessories for your furry friends, we offer high-quality products that your pets will love.",
+    "brand_logo": "https://i.ibb.co.com/Yj0JrFS/Pet-World.png",
+    "coupons": [
+      {
+        "coupon_code": "PETLOVER",
+        "description": "15% off on pet food and supplies.",
+        "expiry_date": "2025-01-01",
+        "condition": "Valid on orders above $30.",
+        "coupon_type": "Discount"
+      },
+      {
+        "coupon_code": "FREETOY",
+        "description": "Free pet toy with any order.",
+        "expiry_date": "2024-11-30",
+        "condition": "No minimum purchase required.",
+        "coupon_type": "Free Gift"
+      }
+    ],
+    "shop_link": "https://i.ibb.co.com/Yj0JrFS/Pet-World.png",
+    "category": "Pets",
+    "isSaleOn": true
+  }
+]

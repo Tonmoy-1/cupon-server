@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   FaHome,
   FaTag,
@@ -16,60 +16,62 @@ const Header = ({ user, onLogout }) => {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Left Side  */}
         <div className="flex items-center space-x-2">
-          <img src="/path-to-your-logo.png" alt="Logo" className="h-10" />
-          <span className="text-xl font-bold text-yellow-500">BrandName</span>
+          {/* <img src="/path-to-your-logo.png" alt="Logo" className="h-10" /> */}
+          <span className="text-xl font-bold text-yellow-500">
+            Discount PRO
+          </span>
         </div>
 
         {/* Center  */}
         <div className="flex-grow flex justify-center space-x-6">
-          <Link
+          <NavLink
             to="/"
             className="flex items-center space-x-2 text-lg hover:text-yellow-500"
           >
             <FaHome />
             <span>Home</span>
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/brands"
             className="flex items-center space-x-2 text-lg hover:text-yellow-500"
           >
             <FaTag />
             <span>Brands</span>
-          </Link>
+          </NavLink>
           {user && (
-            <Link
+            <NavLink
               to="/my-profile"
               className="flex items-center space-x-2 text-lg hover:text-yellow-500"
             >
               <FaUser />
               <span>My Profile</span>
-            </Link>
+            </NavLink>
           )}
-          <Link
+          <NavLink
             to="/about-dev"
             className="flex items-center space-x-2 text-lg hover:text-yellow-500"
           >
             <FaRegUserCircle />
             <span>About Dev</span>
-          </Link>
+          </NavLink>
         </div>
 
         {/* Right Side  */}
         <div className="flex items-center space-x-4">
           {!user ? (
             <>
-              <Link
+              <NavLink
                 to="/login"
                 className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-200"
               >
                 Login
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 to="/register"
                 className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition-all duration-200"
               >
                 Register
-              </Link>
+              </NavLink>
             </>
           ) : (
             <div className="flex items-center space-x-3">
