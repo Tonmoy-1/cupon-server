@@ -3,8 +3,6 @@
 import { FaStar } from "react-icons/fa"; // React Icons (for stars)
 import ReactRating from "react-rating";
 const SinglecolCard = ({ data }) => {
-  console.log(data);
-
   return (
     <div className="grid grid-cols-1 w-10/12 mx-auto gap-6 py-4">
       {data.map((brand) => (

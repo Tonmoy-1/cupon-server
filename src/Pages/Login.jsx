@@ -1,20 +1,27 @@
+import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
+import { NewContext } from "../Components/AuthContext";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../Firebase";
 
 const Login = () => {
-  const handleLogin = (e) => {
+  const { handleLogin } = useContext(NewContext);
+  const handleLogin2 = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    handleLogin(email, password);
   };
-
-  const handleGoogleLogin = () => {};
+  const googleProvider = new GoogleAuthProvider();
+  const handleGoogleLogin = () => {
+    signInWithPopup(auth, googleProvider);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
         <h2 className="text-2xl font-semibold text-center mb-6">Login</h2>
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin2} className="space-y-4">
           {/* Email Field */}
           <div>
             <label
@@ -60,7 +67,6 @@ const Login = () => {
               type="password"
               name="forget-password"
               className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-              required
             />
           </div>
           {/* Submit Button */}

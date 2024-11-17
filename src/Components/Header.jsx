@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { NavLink } from "react-router-dom";
 import {
   FaHome,
@@ -9,8 +7,12 @@ import {
   //   FaSignInAlt,
   FaSignOutAlt,
 } from "react-icons/fa";
+import { useContext } from "react";
+import { NewContext } from "./AuthContext";
 
-const Header = ({ user, onLogout }) => {
+const Header = () => {
+  const { user, logout } = useContext(NewContext);
+
   return (
     <header className="bg-gray-900 text-white py-4 shadow-lg">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -86,11 +88,11 @@ const Header = ({ user, onLogout }) => {
                   alt={user.name}
                   className="w-12 h-12 rounded-full border-2 border-yellow-500"
                 />
-                <span className="text-sm text-gray-300">{user.email}</span>
+                <span className="text-sm text-gray-300">{user?.email}</span>
               </div>
               {/* Logout button */}
               <button
-                onClick={onLogout}
+                onClick={logout}
                 className="flex items-center space-x-2 text-red-500 hover:text-red-600"
               >
                 <FaSignOutAlt />

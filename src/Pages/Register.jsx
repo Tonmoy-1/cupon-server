@@ -1,9 +1,16 @@
+import { useContext } from "react";
+import { NewContext } from "../Components/AuthContext";
+
 const Register = () => {
+  const { handleRegister, logout } = useContext(NewContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    handleRegister(email, password).then((data) => {
+      console.log(data);
+      logout();
+    });
   };
 
   return (
