@@ -15,6 +15,13 @@ const Header = () => {
 
   return (
     <header className="bg-gray-900 text-white py-4 shadow-lg">
+      {user?.email ? (
+        <div className="my-4 pb-2 text-yellow-300 text-center text-3xl font-bold">
+          WellCome, {user.email}
+        </div>
+      ) : (
+        ""
+      )}
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Left Side  */}
         <div className="flex items-center space-x-2">
@@ -77,10 +84,6 @@ const Header = () => {
             </>
           ) : (
             <div className="flex items-center space-x-3">
-              {/* Welcome message  */}
-              <span className="text-lg font-semibold text-yellow-300 mr-4">
-                Welcome, {user.name}!
-              </span>
               {/* User picture */}
               <div className="flex items-center space-x-3">
                 <img

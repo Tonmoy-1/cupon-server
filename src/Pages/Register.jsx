@@ -1,20 +1,37 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { NewContext } from "../Components/AuthContext";
+import { toast } from "react-toastify";
 
 const Register = () => {
+  const [error, setError] = useState();
+
   const { handleRegister, logout } = useContext(NewContext);
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError("");
     const email = e.target.email.value;
     const password = e.target.password.value;
+    if (password.length < 6) {
+      setError("Password Length must be at least 6 character");
+    }
+    if (!/[A-Z]/.test(password)) {
+      setError("Must have an Uppercase letter in the password");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      setError("Must have a Lowercase letter in the password ");
+      return;
+    }
+
     handleRegister(email, password).then((data) => {
       console.log(data);
+      toast.success("Registered Successfully");
       logout();
     });
   };
 
   return (
-    <div className="min-h-screen py-4 flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen  py-4 flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
         <h2 className="text-2xl font-semibold text-center mb-6">Register</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -86,6 +103,7 @@ const Register = () => {
           >
             Register
           </button>
+          {error && <p className="text-red-500">{error}</p>}
         </form>
         <p className="mt-4 text-center text-sm text-gray-500">
           Already have an account?{" "}
