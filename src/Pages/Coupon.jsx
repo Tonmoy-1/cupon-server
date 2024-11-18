@@ -1,28 +1,30 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import ReactRating from "react-rating";
 import { FaStar } from "react-icons/fa";
+import CopyToClipboard from "react-copy-to-clipboard";
+import { toast } from "react-toastify";
 
 const Coupon = () => {
   const data = useLoaderData();
   const id = useParams();
   const singleData = data.find((singleData) => singleData._id == id.id);
-  console.log(singleData.coupons);
+
   const coupons = singleData.coupons;
   return (
     <div>
-      <div className="bg-white py-6 rounded-lg  ">
+      <div className="bg-blue-950 py-6 ">
         <div className=" items-center">
           <div className="flex gap-3  flex-col items-center space-x-4">
             {/* singleData Logo */}
-            <div className="mt-4 text-center">
-              <h3 className="text-5xl font-semibold text-gray-800">
+            <div className="my-8 w-10/12  text-center">
+              <h3 className="text-7xl font-semibold text-white">
                 {singleData.brand_name}
               </h3>
             </div>
             <img
               src={singleData.brand_logo}
               alt={singleData.brand_name}
-              className="w-[900px] h-[400px]  rounded-lg "
+              className="w-[1050px] h-[500px]  rounded-lg "
             />
             {/* Rating */}
             <div className="flex items-center">
@@ -39,8 +41,8 @@ const Coupon = () => {
           <div className="flex gap-4 mx-auto items-center justify-center m-5">
             {coupons.map((coupon) => {
               return (
-                <div key={coupon.coupon_code}>
-                  <div className="max-w-xl mx-auto bg-white rounded-3xl shadow-xl ">
+                <div className="w-[500px]  " key={coupon.coupon_code}>
+                  <div className="w-full mx-auto pb-3  bg-white rounded-3xl shadow-xl ">
                     {/* Card Header with Gradient */}
                     <div className="bg-gradient-to-r from-teal-400 to-cyan-600 p-4 rounded-t-3xl text-center">
                       <h2 className="text-4xl font-extrabold text-white tracking-wide">
@@ -57,7 +59,7 @@ const Coupon = () => {
                         <span className="text-5xl font-bold text-teal-600">
                           {coupon.coupon_type}
                         </span>
-                        <span className="text-2xl font-bold text-teal-600">
+                        <span className="text-xl font-bold text-teal-600">
                           {coupon.description}
                         </span>
                         <p className="font-bold text-xl  ">
@@ -70,10 +72,20 @@ const Coupon = () => {
                     </div>
 
                     {/* Card Footer with Button */}
-                    <div className="px-8 pb-8">
-                      <button className="w-full bg-teal-600 text-white py-4 rounded-full text-lg font-semibold hover:bg-teal-700 transform transition-all duration-300">
-                        Claim Your Coupon
-                      </button>
+                    <div className=" flex justify-center items-center gap-2 text-center rounded-full">
+                      <p className=" text-white font-bold rounded-xl bg-gradient-to-r from-teal-400 to-cyan-600 text-xl p-3">
+                        {coupon.coupon_code}
+                      </p>
+                      <CopyToClipboard text={coupon.coupon_code}>
+                        <button
+                          onClick={() =>
+                            toast.success(`Coppied: ${coupon.coupon_code}`)
+                          }
+                          className="btn btn-outline"
+                        >
+                          Copy Code
+                        </button>
+                      </CopyToClipboard>
                     </div>
                   </div>
                 </div>
@@ -83,9 +95,9 @@ const Coupon = () => {
 
           {/* 3 */}
           <div className="text-center">
-            <Link to={`/singleDatas/${singleData._id}`}>
-              <button className="btn text-white bg-green-600">
-                View Coupons
+            <Link to={`/brands`}>
+              <button className="btn text-xl text-white bg-gradient-to-r from-teal-400 to-cyan-600">
+                Use Now
               </button>
             </Link>
             <p>Coupons:</p>

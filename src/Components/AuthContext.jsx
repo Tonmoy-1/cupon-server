@@ -41,7 +41,9 @@ const AuthContext = ({ children }) => {
     setUser,
   };
   return (
-    <NewContext.Provider value={allfunction}>{children}</NewContext.Provider>
+    <div>
+      <NewContext.Provider value={allfunction}>{children}</NewContext.Provider>
+    </div>
   );
 };
 

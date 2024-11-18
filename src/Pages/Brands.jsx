@@ -5,7 +5,7 @@ const Brands = () => {
   const data = useLoaderData();
   return (
     <div>
-      <div className="w-11/12 mx-auto mt-1 bg-green-600 h-[300px]  rounded-xl text-white py-4 px-6 ">
+      <div className="w-11/12 mx-auto mt-1 bg-gradient-to-r from-teal-400 to-cyan-600 h-[300px]  rounded-xl text-white py-4 px-6 ">
         <div className="mt-20">
           <h1 className="text-4xl  font-semibold text-center">
             Explore Our All Brand And Find Your Destiny

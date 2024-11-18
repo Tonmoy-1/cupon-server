@@ -4,7 +4,7 @@ const BrandSaleCard = ({ data }) => {
   console.log(saleBrands);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3  gap-6 p-4">
+    <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3  gap-6 p-4">
       {saleBrands.map((brand) => (
         <div
           key={brand._id}
@@ -26,7 +26,7 @@ const BrandSaleCard = ({ data }) => {
               Category: {brand.category}
             </p>
             {brand.isSaleOn && (
-              <span className="mt-4 px-7 py-3 bg-green-500 text-sm font-bold text-white rounded-full">
+              <span className="mt-4 px-7 py-3 bg-gradient-to-r from-teal-400 to-cyan-600 text-sm font-bold text-white rounded-full">
                 Sale On
               </span>
             )}

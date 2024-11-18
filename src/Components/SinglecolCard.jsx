@@ -50,7 +50,7 @@ const SinglecolCard = ({ data }) => {
             {/* 3 */}
             <div className="text-center">
               <Link to={`/brands/${brand._id}`}>
-                <button className="btn text-white bg-green-600">
+                <button className="btn text-white bg-gradient-to-r from-teal-400 to-cyan-600">
                   View Coupons
                 </button>
               </Link>
