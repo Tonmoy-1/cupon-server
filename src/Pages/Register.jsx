@@ -1,9 +1,11 @@
 import { useContext, useState } from "react";
 import { NewContext } from "../Components/AuthContext";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [error, setError] = useState();
+  const navigate = useNavigate();
 
   const { handleRegister, logout } = useContext(NewContext);
   const handleSubmit = (e) => {
@@ -23,11 +25,15 @@ const Register = () => {
       return;
     }
 
-    handleRegister(email, password).then((data) => {
-      console.log(data);
-      toast.success("Registered Successfully");
-      logout();
-    });
+    handleRegister(email, password)
+      .then(() => {
+        toast.success("Registered Successfully");
+        navigate("/login");
+        logout();
+      })
+      .catch((error) => {
+        toast.error(` ${error.message}`);
+      });
   };
 
   return (

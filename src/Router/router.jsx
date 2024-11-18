@@ -5,6 +5,10 @@ import Brands from "../Pages/Brands";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Coupon from "../Pages/Coupon";
+import MyProfile from "../Pages/MyProfile";
+import UpdateProfile from "../Pages/UpdateProfile";
+import About from "../Pages/About";
+import PrivetRouts from "./PrivetRouts";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/brands/:id",
-        element: <Coupon></Coupon>,
+        element: (
+          <PrivetRouts>
+            <Coupon></Coupon>
+          </PrivetRouts>
+        ),
         loader: () => fetch("/fakedata.json"),
       },
 
@@ -35,6 +43,18 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/my-profile",
+        element: <MyProfile></MyProfile>,
+      },
+      {
+        path: "/update-profile",
+        element: <UpdateProfile></UpdateProfile>,
+      },
+      {
+        path: "/about-dev",
+        element: <About></About>,
       },
     ],
   },

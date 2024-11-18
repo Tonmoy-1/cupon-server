@@ -13,6 +13,7 @@ export const NewContext = createContext();
 
 const AuthContext = ({ children }) => {
   const [user, setUser] = useState();
+  const [loading, setLoading] = useState(true);
   const handleRegister = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -22,7 +23,12 @@ const AuthContext = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentuser) => {
-      setUser(currentuser);
+      if (currentuser) {
+        setUser(currentuser);
+      } else {
+        setUser(null);
+      }
+      setLoading(false);
       return () => {
         unSubscribe();
       };
@@ -39,6 +45,7 @@ const AuthContext = ({ children }) => {
     logout,
     user,
     setUser,
+    loading,
   };
   return (
     <div>

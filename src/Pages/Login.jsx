@@ -1,23 +1,41 @@
+/* eslint-disable no-unused-vars */
 import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { NewContext } from "../Components/AuthContext";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../Firebase";
 import { toast } from "react-toastify";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { handleLogin } = useContext(NewContext);
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleLogin2 = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    handleLogin(email, password).then(() => {
-      toast.success("Loged In Successfully");
-    });
+    handleLogin(email, password)
+      .then(() => {
+        toast.success("Loged In Successfully");
+        navigate("/");
+        navigate(location.state.from);
+      })
+      .catch((error) => {
+        toast.error(` ${error.message}`);
+      });
   };
   const googleProvider = new GoogleAuthProvider();
   const handleGoogleLogin = () => {
-    signInWithPopup(auth, googleProvider);
+    signInWithPopup(auth, googleProvider)
+      .then(() => {
+        toast.success("Loged In Successfully");
+        navigate("/");
+        navigate(location.state.from);
+      })
+      .catch((error) => {
+        toast.error(` ${error.message}`);
+      });
   };
 
   return (
