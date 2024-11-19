@@ -15,9 +15,10 @@ export const NewContext = createContext();
 const AuthContext = ({ children }) => {
   const [forgetemail, setForgetemail] = useState(null);
   const [name, setName] = useState("");
+  const [info, setInfo] = useState(null);
 
   const [user, setUser] = useState();
-  console.log(user);
+  console.log(user, info);
 
   const [loading, setLoading] = useState(true);
   const handleRegister = (email, password) => {
@@ -25,14 +26,6 @@ const AuthContext = ({ children }) => {
   };
   const handleLogin = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
-  };
-  const updatedProfile = ({ updateData }) => {
-    updateProfile(auth.currentUser, {
-      displayName: username,
-      photoURL: photo,
-    }).then(() => {
-      navigate("/");
-    });
   };
 
   useEffect(() => {
@@ -51,7 +44,8 @@ const AuthContext = ({ children }) => {
 
   const logout = () => {
     signOut(auth);
-    setName("");
+    setInfo(null);
+    setUser(null);
   };
 
   const allfunction = {
@@ -65,7 +59,9 @@ const AuthContext = ({ children }) => {
     loading,
     setForgetemail,
     forgetemail,
-    updatedProfile,
+    info,
+    setInfo,
+    // updatedProfile,
   };
   return (
     <div>

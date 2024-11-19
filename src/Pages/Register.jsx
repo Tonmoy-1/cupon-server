@@ -42,7 +42,7 @@ const Register = () => {
         setUser(user);
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(`${error.message}`);
       });
   };
 

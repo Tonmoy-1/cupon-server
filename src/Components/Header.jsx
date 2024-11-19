@@ -11,17 +11,20 @@ import { NewContext } from "./AuthContext";
 import logo from "../assets/logo.webp";
 
 const Header = () => {
-  const { user, logout } = useContext(NewContext);
+  const { user, logout, info } = useContext(NewContext);
 
   return (
     <header className="bg-gray-900 text-white py-4 shadow-lg">
-      {user?.email ? (
+      {info ? (
         <div className="my-4 pb-2 text-yellow-300 text-center text-3xl font-bold">
-          Welcome {user?.displayName}
+          Welcome {info.name}
         </div>
-      ) : (
-        ""
-      )}
+      ) : user ? (
+        <div className="my-4 pb-2 text-yellow-300 text-center text-3xl font-bold">
+          Welcome {user.displayName}
+        </div>
+      ) : null}
+
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-wrap items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -86,7 +89,7 @@ const Header = () => {
                 {/* User Picture */}
                 <div className="flex items-center space-x-3">
                   <img
-                    src={user?.photoURL}
+                    src={info ? info.photo : user?.photoURL}
                     className="w-12 h-12 rounded-full border-2 border-yellow-500"
                   />
                   <span className="text-sm text-gray-300">{user?.email}</span>

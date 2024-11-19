@@ -1,11 +1,25 @@
+import { useContext } from "react";
+import { NewContext } from "../Components/AuthContext";
+import { useNavigate } from "react-router-dom";
+
 const UpdateProfile = () => {
-  const handleSubmit = (e) => {
-    e.preventDefult();
+  const navigate = useNavigate();
+  const { setInfo } = useContext(NewContext);
+  const handleSubmit2 = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    const info = {
+      name,
+      photo,
+    };
+    setInfo(info);
+    navigate("/my-profile");
   };
   return (
     <div>
       <div className="bg-white rounded-xl max-w-lg border-2 border-gray-400 mx-auto p-10 mt-5">
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit2} className="space-y-6">
           {/* First Name */}
           <div>
             <label
@@ -17,7 +31,7 @@ const UpdateProfile = () => {
             <input
               type="text"
               id="firstName"
-              name="firstName"
+              name="name"
               className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
             />
           </div>
@@ -32,9 +46,8 @@ const UpdateProfile = () => {
             </label>
             <input
               id="photourl"
-              name="photourl"
+              name="photo"
               className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-              required
             />
           </div>
 

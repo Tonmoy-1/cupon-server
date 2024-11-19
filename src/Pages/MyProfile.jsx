@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { FaEdit } from "react-icons/fa"; // Icon for the update button
 import { Link } from "react-router-dom";
+import { NewContext } from "../Components/AuthContext";
 
 const MyProfile = () => {
+  const { user, info } = useContext(NewContext);
   return (
     <div className="max-w-4xl mx-auto mt-10 p-8 bg-white rounded-lg shadow-lg">
       <h1 className="text-3xl font-bold text-gray-800 text-center mb-6">
@@ -12,7 +15,7 @@ const MyProfile = () => {
         {/* MyProfile Picture */}
         <img
           //   src={user.MyProfilePicture}
-          src="https://scontent.fdac27-1.fna.fbcdn.net/v/t39.30808-6/356649623_1192373974762966_829248570328935216_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=sx9bFk89zIoQ7kNvgH0E0_k&_nc_zt=23&_nc_ht=scontent.fdac27-1.fna&_nc_gid=AQfzcO9sie9KYuDzFUdEVtF&oh=00_AYArF2snGPumaYctsVVZ48yD78t54YrhYHkX_A7WT5xCdw&oe=673F5A5C"
+          src={info ? info.photo : user?.photoURL}
           alt="MyProfile"
           className="w-32 h-32 rounded-full object-cover mb-4"
         />
@@ -20,11 +23,11 @@ const MyProfile = () => {
         {/* Display Name */}
         <p className="text-2xl font-semibold text-gray-700">
           {/* {user.displayName} */}
-          Md Tonmoy Bisswas
+          {info ? info.name : user?.displayName}
         </p>
 
         {/* Email */}
-        <p className="text-sm text-gray-500 mt-2">tonmoyhosen767@gmail.com</p>
+        <p className="text-sm text-gray-500 mt-2">{user?.email}</p>
 
         {/* Update MyProfile Button */}
         <Link to={"/update-profile"}>

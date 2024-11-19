@@ -9,9 +9,25 @@ const ForgetPassWord = () => {
   const resetPassword = (e) => {
     e.preventDefault();
     const email = forgetemail;
-    sendPasswordResetEmail(auth, email).then(() => {
-      toast.success("send you a Code to your email");
-    });
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        toast.success(
+          "A code has been sent to your email. Please check your inbox."
+        );
+        const openMail = window.confirm(
+          "Do you want to open Gmail in a new tab?"
+        );
+        if (openMail) {
+          window.open(
+            "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",
+            "_blank"
+          );
+        }
+      })
+      .catch((error) => {
+        toast.error("Failed to send reset email. Please try again.");
+        console.error(error);
+      });
   };
   return (
     <div className="min-h-screen  flex items-center justify-center bg-gray-100">

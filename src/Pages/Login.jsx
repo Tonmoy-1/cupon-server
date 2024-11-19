@@ -31,9 +31,7 @@ const Login = () => {
         navigate("/");
         navigate(location.state.from);
       })
-      .catch(() => {
-        toast.error("Email or PassWord didn't match");
-      });
+      .catch(() => {});
   };
   const googleProvider = new GoogleAuthProvider();
   const handleGoogleLogin = () => {
@@ -43,9 +41,7 @@ const Login = () => {
         navigate("/");
         navigate(location.state.from);
       })
-      .catch(() => {
-        toast.error("Email or PassWord didn't match");
-      });
+      .catch(() => {});
   };
 
   return (
