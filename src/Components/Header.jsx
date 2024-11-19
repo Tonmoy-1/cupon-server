@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { useContext } from "react";
 import { NewContext } from "./AuthContext";
+import logo from "../assets/logo.webp";
 
 const Header = () => {
   const { user, logout } = useContext(NewContext);
@@ -20,17 +21,14 @@ const Header = () => {
         </div>
       )}
       <div className="max-w-7xl mx-auto px-6">
-        {/* Flex container for header layout */}
         <div className="flex flex-wrap items-center justify-between">
-          {/* Left Side - Logo and Title */}
           <div className="flex items-center space-x-2">
-            {/* <img src="/path-to-your-logo.png" alt="Logo" className="h-10" /> */}
+            <img src={logo} alt="Logo" className="h-16 w-16 rounded-full" />
             <span className="text-xl font-bold text-yellow-500">
-              Discount PRO
+              Coupon Saver BD
             </span>
           </div>
 
-          {/* Center - Navigation Links */}
           <div className="flex-grow flex justify-center space-x-6">
             <NavLink
               to="/"

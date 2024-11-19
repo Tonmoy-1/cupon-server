@@ -1,8 +1,11 @@
-/* eslint-disable no-unused-vars */
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { NewContext } from "../Components/AuthContext";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  sendPasswordResetEmail,
+  signInWithPopup,
+} from "firebase/auth";
 import auth from "../Firebase";
 import { toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -11,6 +14,14 @@ const Login = () => {
   const { handleLogin } = useContext(NewContext);
   const location = useLocation();
   const navigate = useNavigate();
+  const emailRef = useRef();
+
+  const forGetPass = () => {
+    const email = emailRef.current.value;
+    sendPasswordResetEmail(auth, email).then(() => {
+      toast.success("send you a Code to your email");
+    });
+  };
   const handleLogin2 = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -21,8 +32,8 @@ const Login = () => {
         navigate("/");
         navigate(location.state.from);
       })
-      .catch((error) => {
-        toast.error(` ${error.message}`);
+      .catch(() => {
+        toast.error("Email or PassWord didn't match");
       });
   };
   const googleProvider = new GoogleAuthProvider();
@@ -33,8 +44,8 @@ const Login = () => {
         navigate("/");
         navigate(location.state.from);
       })
-      .catch((error) => {
-        toast.error(` ${error.message}`);
+      .catch(() => {
+        toast.error("Email or PassWord didn't match");
       });
   };
 
@@ -53,6 +64,7 @@ const Login = () => {
             </label>
             <input
               id="email"
+              ref={emailRef}
               name="email"
               type="email"
               className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
@@ -78,17 +90,12 @@ const Login = () => {
           {/* forgot pass */}
           <div>
             <label
+              onClick={forGetPass}
               htmlFor="password"
-              className="block text-sm font-medium text-gray-600"
+              className="block text-sm underline cursor-pointer text-gray-600"
             >
-              Forget Password
+              Forgot Password?
             </label>
-            <input
-              id="forget-password"
-              type="password"
-              name="forget-password"
-              className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-            />
           </div>
           {/* Submit Button */}
           <button
