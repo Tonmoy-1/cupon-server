@@ -9,6 +9,7 @@ import MyProfile from "../Pages/MyProfile";
 import UpdateProfile from "../Pages/UpdateProfile";
 import About from "../Pages/About";
 import PrivetRouts from "./PrivetRouts";
+import ForgetPassWord from "../Pages/ForgetPassWord";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/forgetpass",
+        element: <ForgetPassWord></ForgetPassWord>,
       },
       {
         path: "/my-profile",

@@ -2,17 +2,21 @@ import { useContext, useState } from "react";
 import { NewContext } from "../Components/AuthContext";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import { updateProfile } from "firebase/auth";
+import auth from "../Firebase";
 const Register = () => {
   const [error, setError] = useState();
   const navigate = useNavigate();
 
-  const { handleRegister, logout } = useContext(NewContext);
+  const { handleRegister, setUser } = useContext(NewContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
+    const username = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+    const photo = e.target.photo.value;
+    console.log(username, photo);
     if (password.length < 6) {
       setError("Password Length must be at least 6 character");
     }
@@ -26,13 +30,19 @@ const Register = () => {
     }
 
     handleRegister(email, password)
-      .then(() => {
+      .then((res) => {
         toast.success("Registered Successfully");
-        navigate("/login");
-        logout();
+        const user = res.user;
+        updateProfile(auth.currentUser, {
+          displayName: username,
+          photoURL: photo,
+        }).then(() => {
+          navigate("/");
+        });
+        setUser(user);
       })
       .catch((error) => {
-        toast.error(` ${error.message}`);
+        console.log(error);
       });
   };
 
@@ -54,6 +64,7 @@ const Register = () => {
               type="text"
               name="name"
               className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+              required
             />
           </div>
           {/* email field */}
@@ -82,6 +93,7 @@ const Register = () => {
             </label>
             <input
               id="photoURL"
+              name="photo"
               type="url"
               className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
             />

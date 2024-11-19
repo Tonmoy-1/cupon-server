@@ -1,26 +1,25 @@
 import { useContext, useRef } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { NewContext } from "../Components/AuthContext";
-import {
-  GoogleAuthProvider,
-  sendPasswordResetEmail,
-  signInWithPopup,
-} from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../Firebase";
 import { toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { handleLogin } = useContext(NewContext);
+  const { handleLogin, setForgetemail } = useContext(NewContext);
   const location = useLocation();
   const navigate = useNavigate();
   const emailRef = useRef();
-
+  // forget password section
   const forGetPass = () => {
     const email = emailRef.current.value;
-    sendPasswordResetEmail(auth, email).then(() => {
-      toast.success("send you a Code to your email");
-    });
+    if (!email) {
+      return toast.error("please enter email");
+    } else {
+      setForgetemail(email);
+      navigate("/forgetpass");
+    }
   };
   const handleLogin2 = (e) => {
     e.preventDefault();

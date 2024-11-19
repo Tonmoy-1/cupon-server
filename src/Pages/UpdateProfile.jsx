@@ -25,15 +25,14 @@ const UpdateProfile = () => {
           {/* Email */}
           <div>
             <label
-              htmlFor="email"
+              htmlFor="photoUrl"
               className="block text-sm font-medium text-gray-700"
             >
-              Email
+              Photo URl
             </label>
             <input
-              type="email"
-              id="email"
-              name="email"
+              id="photourl"
+              name="photourl"
               className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
               required
             />
@@ -45,7 +44,7 @@ const UpdateProfile = () => {
               type="submit"
               className="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
-              Update
+              Update Iformation
             </button>
           </div>
         </form>
