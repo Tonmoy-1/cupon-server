@@ -1,3 +1,4 @@
+import { useState, useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import {
   FaHome,
@@ -5,14 +6,18 @@ import {
   FaUser,
   FaRegUserCircle,
   FaSignOutAlt,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
-import { useContext } from "react";
 import { NewContext } from "./AuthContext";
 import logo from "../assets/logo.webp";
 
 const Header = () => {
   const { user, handlelogout, info } = useContext(NewContext);
   const navigate = useNavigate();
+
+  // State to control the mobile menu visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-gray-900 text-white py-4 shadow-lg">
@@ -28,14 +33,30 @@ const Header = () => {
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-wrap items-center justify-between">
+          {/* Left side: Logo and Title */}
           <div className="flex items-center space-x-2">
-            <img src={logo} alt="Logo" className="h-16 w-16 rounded-full" />
-            <span className="text-xl font-bold text-yellow-500">
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-12 md:h-16 w-12 md:w-16 rounded-full"
+            />
+            <span className="text-xl font-bold text-yellow-500 hidden md:block">
               Coupon Saver BD
             </span>
           </div>
 
-          <div className="flex-grow flex justify-center space-x-6">
+          {/* Navbar Toggle (for mobile and tablet) */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white"
+            >
+              {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+          </div>
+
+          {/* Center: Navigation Menu (Hidden on mobile) */}
+          <div className="flex-grow  justify-center space-x-6 hidden md:flex">
             <NavLink
               to="/"
               className="flex items-center space-x-2 text-lg hover:text-yellow-500"
@@ -110,6 +131,38 @@ const Header = () => {
             )}
           </div>
         </div>
+
+        {/* Mobile Menu (Hidden by default) */}
+        {isMenuOpen && (
+          <div className="md:hidden flex flex-col space-y-4 mt-4">
+            <NavLink
+              to="/"
+              className="text-lg text-white hover:text-yellow-500"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/brands"
+              className="text-lg text-white hover:text-yellow-500"
+            >
+              Brands
+            </NavLink>
+            {user && (
+              <NavLink
+                to="/my-profile"
+                className="text-lg text-white hover:text-yellow-500"
+              >
+                My Profile
+              </NavLink>
+            )}
+            <NavLink
+              to="/about-dev"
+              className="text-lg text-white hover:text-yellow-500"
+            >
+              About Dev
+            </NavLink>
+          </div>
+        )}
       </div>
     </header>
   );

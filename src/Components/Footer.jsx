@@ -5,6 +5,7 @@ import {
   FaLinkedin,
   FaGithub,
 } from "react-icons/fa";
+import logo from "../assets/logo.webp";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
         {/* Left Side  */}
         <div className="flex flex-col items-center md:items-start">
-          <img src="/path-to-your-logo.png" alt="Logo" className="h-12 mb-4" />
+          <img src={logo} alt="Logo" className="h-14 rounded-lg mb-4" />
           <span className="text-sm md:text-base text-gray-400">
             © 2024 CouponCollect. All rights reserved.
           </span>
