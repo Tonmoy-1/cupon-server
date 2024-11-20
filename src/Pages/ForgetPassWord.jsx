@@ -24,9 +24,8 @@ const ForgetPassWord = () => {
           );
         }
       })
-      .catch((error) => {
+      .catch(() => {
         toast.error("Failed to send reset email. Please try again.");
-        console.error(error);
       });
   };
   return (
