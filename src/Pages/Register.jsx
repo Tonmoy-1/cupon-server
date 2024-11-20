@@ -4,9 +4,11 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import auth from "../Firebase";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Register = () => {
   const [error, setError] = useState();
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   const { handleRegister, setUser } = useContext(NewContext);
   const handleSubmit = (e) => {
@@ -106,13 +108,22 @@ const Register = () => {
             >
               Password
             </label>
-            <input
-              id="password"
-              type="password"
-              name="password"
-              className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-              required
-            />
+            <div className="relative w-full mt-1">
+              <input
+                id="password"
+                type={showPassword ? "text" : "password"}
+                name="password"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800 focus:outline-none"
+              >
+                {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+              </button>
+            </div>
           </div>
           {/* Submit Button */}
           <button
