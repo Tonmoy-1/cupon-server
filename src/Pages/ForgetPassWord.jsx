@@ -14,7 +14,6 @@ const ForgetPassWord = () => {
         toast.success(
           "A code has been sent to your email. Please check your inbox."
         );
-
         window.open(
           "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",
           "_blank"
