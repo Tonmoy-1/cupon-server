@@ -2,9 +2,10 @@ import { useContext, useState } from "react";
 import { NewContext } from "../Components/AuthContext";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { updateProfile } from "firebase/auth";
+import { signInWithPopup, updateProfile } from "firebase/auth";
 import auth from "../Firebase";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider } from "firebase/auth";
 const Register = () => {
   const [error, setError] = useState();
   const navigate = useNavigate();
@@ -46,6 +47,16 @@ const Register = () => {
       .catch((error) => {
         toast.error(`${error.message}`);
       });
+  };
+  const googleProvider = new GoogleAuthProvider();
+  const handleGoogleLogin = () => {
+    signInWithPopup(auth, googleProvider)
+      .then(() => {
+        toast.success("Loged In Successfully");
+        navigate("/");
+        navigate(location.state.from);
+      })
+      .catch(() => {});
   };
 
   return (
@@ -134,6 +145,16 @@ const Register = () => {
           </button>
           {error && <p className="text-red-500">{error}</p>}
         </form>
+
+        {/* Social Login Section */}
+        <div className="mt-6 space-y-4">
+          <button
+            onClick={handleGoogleLogin}
+            className="w-full flex items-center justify-center py-2 px-4 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+          >
+            <FaGoogle className="mr-3 text-xl" /> Login with Google
+          </button>
+        </div>
         <p className="mt-4 text-center text-sm text-gray-500">
           Already have an account?{" "}
           <a href="/login" className="text-blue-600 hover:underline">

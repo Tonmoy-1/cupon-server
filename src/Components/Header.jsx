@@ -32,9 +32,9 @@ const Header = () => {
       ) : null}
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-wrap items-center justify-between">
+        <div className="flex flex-wrap sm:gap-3  items-center justify-between">
           {/* Left side: Logo and Title */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center mb-3 space-x-2">
             <img
               src={logo}
               alt="Logo"

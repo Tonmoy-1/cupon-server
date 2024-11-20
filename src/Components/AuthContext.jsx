@@ -18,8 +18,6 @@ const AuthContext = ({ children }) => {
   const [info, setInfo] = useState(null);
 
   const [user, setUser] = useState();
-  console.log(user, info);
-
   const [loading, setLoading] = useState(true);
   const handleRegister = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);

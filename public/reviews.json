@@ -1,0 +1,38 @@
+[
+  {
+    "name": "John Doe",
+    "rating": 5,
+    "review": "This app saved me so much money! I love how easy it is to find coupons for my favorite brands. Highly recommend it!",
+    "avatar": "https://i.pravatar.cc/150?img=1"
+  },
+  {
+    "name": "Jane Smith",
+    "rating": 4,
+    "review": "Great selection of coupons. The app is easy to navigate and has a lot of brands to choose from. Would love to see more exclusive discounts!",
+    "avatar": "https://i.pravatar.cc/150?img=2"
+  },
+  {
+    "name": "Sarah Lee",
+    "rating": 4.5,
+    "review": "Easy to use and tons of discounts. The only thing missing is more frequent updates on deals. Overall, I'm really happy with it.",
+    "avatar": "https://i.pravatar.cc/150?img=3"
+  },
+  {
+    "name": "Michael Brown",
+    "rating": 3,
+    "review": "Good app, but sometimes the coupons don't work. Still, it's useful for saving on major purchases. Needs some improvements.",
+    "avatar": "https://i.pravatar.cc/150?img=4"
+  },
+  {
+    "name": "Emily White",
+    "rating": 5,
+    "review": "I love this app! It's so convenient and saves me a lot of money. I can always find great deals for online shopping.",
+    "avatar": "https://i.pravatar.cc/150?img=5"
+  },
+  {
+    "name": "David Green",
+    "rating": 4,
+    "review": "Good variety of coupons. The interface is clean and easy to use. I only wish there were more coupons for local stores.",
+    "avatar": "https://i.pravatar.cc/150?img=6"
+  }
+]

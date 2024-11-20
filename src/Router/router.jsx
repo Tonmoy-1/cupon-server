@@ -10,11 +10,13 @@ import UpdateProfile from "../Pages/UpdateProfile";
 import About from "../Pages/About";
 import PrivetRouts from "./PrivetRouts";
 import ForgetPassWord from "../Pages/ForgetPassWord";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

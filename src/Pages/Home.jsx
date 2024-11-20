@@ -3,6 +3,8 @@ import Slider from "../Components/Slider";
 import Title from "../Components/Title";
 import TopBrand from "../Components/TopBrand";
 import BrandSaleCard from "../Components/BrandSaleCard";
+import CouponTips from "../Components/CouponTips ";
+import Review from "../Components/Review";
 
 const Home = () => {
   const allBrands = useLoaderData();
@@ -23,6 +25,8 @@ const Home = () => {
         }
       ></Title>
       <BrandSaleCard data={allBrands}></BrandSaleCard>
+      <Review></Review>
+      <CouponTips></CouponTips>
     </div>
   );
 };
