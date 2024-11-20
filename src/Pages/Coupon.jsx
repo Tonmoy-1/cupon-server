@@ -99,12 +99,11 @@ const Coupon = () => {
 
           {/* Use Now Button */}
           <div className="text-center mt-6">
-            <Link to={`/brands`}>
+            <Link to={singleData.shop_link} target="_blank">
               <button className="btn text-lg sm:text-xl text-white bg-gradient-to-r from-teal-400 to-cyan-600 py-2 px-4">
                 Use Now
               </button>
             </Link>
-            <p className="mt-4">Coupons:</p>
           </div>
         </div>
       </div>

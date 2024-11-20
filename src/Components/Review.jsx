@@ -11,7 +11,6 @@ const Review = () => {
         setReviews(data);
       });
   }, []);
-  console.log(reviews);
 
   return (
     <div className="py-12">

@@ -21,7 +21,7 @@
         "coupon_type": "Shipping"
       }
     ],
-    "shop_link": "https://techhaven.com",
+    "shop_link": "https://techhavenbn.com/",
     "category": "Electronics",
     "isSaleOn": true
   },
@@ -47,7 +47,7 @@
         "coupon_type": "BOGO"
       }
     ],
-    "shop_link": "https://styleloft.com",
+    "shop_link": "https://styleloft.pk/",
     "category": "Fashion",
     "isSaleOn": false
   },
@@ -73,7 +73,7 @@
         "coupon_type": "Free Gift"
       }
     ],
-    "shop_link": "https://fitgearpro.com",
+    "shop_link": "https://www.gymaesthetics.com/",
     "category": "Fitness",
     "isSaleOn": false
   },
@@ -125,7 +125,7 @@
         "coupon_type": "Shipping"
       }
     ],
-    "shop_link": "https://homeessentials.com",
+    "shop_link": "https://www.homeessentials.co.uk/",
     "category": "Home",
     "isSaleOn": false
   },
@@ -151,7 +151,7 @@
         "coupon_type": "Free Gift"
       }
     ],
-    "shop_link": "https://beautybliss.com",
+    "shop_link": "https://beautybliss.co.nz/",
     "category": "Beauty",
     "isSaleOn": true
   },
@@ -177,7 +177,7 @@
         "coupon_type": "Free Gift"
       }
     ],
-    "shop_link": "https://kitchenkonnect.com",
+    "shop_link": "https://konnectkitchens.com.au/",
     "category": "Kitchen",
     "isSaleOn": false
   },
@@ -203,7 +203,7 @@
         "coupon_type": "Free Gift"
       }
     ],
-    "shop_link": "https://i.ibb.co.com/9WtKrXv/Toy-Chest.webp",
+    "shop_link": "https://www.amazon.com/toy-chest/s?k=toy+chest",
     "category": "Toys",
     "isSaleOn": true
   },
@@ -229,7 +229,7 @@
         "coupon_type": "Free Gift"
       }
     ],
-    "shop_link": "https://i.ibb.co.com/jJYCKx3/Outdoor-Gear-Co.webp",
+    "shop_link": "https://outdoorgearco.ca/",
     "category": "Outdoors",
     "isSaleOn": true
   },
@@ -255,7 +255,7 @@
         "coupon_type": "Free Gift"
       }
     ],
-    "shop_link": "https://i.ibb.co.com/Yj0JrFS/Pet-World.png",
+    "shop_link": "https://www.petworld.ie/",
     "category": "Pets",
     "isSaleOn": true
   }

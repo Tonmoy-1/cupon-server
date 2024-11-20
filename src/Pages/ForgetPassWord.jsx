@@ -14,15 +14,11 @@ const ForgetPassWord = () => {
         toast.success(
           "A code has been sent to your email. Please check your inbox."
         );
-        const openMail = window.confirm(
-          "Do you want to open Gmail in a new tab?"
+
+        window.open(
+          "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",
+          "_blank"
         );
-        if (openMail) {
-          window.open(
-            "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",
-            "_blank"
-          );
-        }
       })
       .catch(() => {
         toast.error("Failed to send reset email. Please try again.");
