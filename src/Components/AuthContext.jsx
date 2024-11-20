@@ -42,10 +42,11 @@ const AuthContext = ({ children }) => {
     });
   }, []);
 
-  const logout = () => {
-    signOut(auth);
-    setInfo(null);
-    setUser(null);
+  const handlelogout = () => {
+    signOut(auth).then(() => {
+      setInfo(null);
+      setUser(null);
+    });
   };
 
   const allfunction = {
@@ -53,7 +54,7 @@ const AuthContext = ({ children }) => {
     setName,
     handleRegister,
     handleLogin,
-    logout,
+    handlelogout,
     user,
     setUser,
     loading,

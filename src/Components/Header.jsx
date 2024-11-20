@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   FaHome,
   FaTag,
@@ -11,7 +11,8 @@ import { NewContext } from "./AuthContext";
 import logo from "../assets/logo.webp";
 
 const Header = () => {
-  const { user, logout, info } = useContext(NewContext);
+  const { user, handlelogout, info } = useContext(NewContext);
+  const navigate = useNavigate();
 
   return (
     <header className="bg-gray-900 text-white py-4 shadow-lg">
@@ -96,7 +97,10 @@ const Header = () => {
                 </div>
                 {/* Logout Button */}
                 <button
-                  onClick={logout}
+                  onClick={() => {
+                    handlelogout();
+                    navigate("/");
+                  }}
                   className="flex items-center space-x-2 text-red-500 hover:text-red-600"
                 >
                   <FaSignOutAlt />
