@@ -56,11 +56,13 @@ const SinglecolCard = ({ data }) => {
               </Link>
             </div>
 
-            <div className="absolute top-0 right-5">
+            <div className="absolute top-0 md:right-5 right-0">
               {brand.isSaleOn && (
-                <div className="flex gap-3 items-center">
-                  <FaCircle className="text-green-600 text-lg"></FaCircle>
-                  <p className="text-lg font-bold">Sale is On</p>
+                <div className="md:flex gap-3 items-center">
+                  <FaCircle className="text-green-600 text-lg hidden md:block"></FaCircle>
+                  <p className=" animate__animated animate__bounce animate__infinite animate__slow text-lg font-bold">
+                    Sale is On
+                  </p>
                 </div>
               )}
             </div>

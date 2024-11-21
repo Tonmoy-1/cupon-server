@@ -79,14 +79,6 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-4">
           <p className="text-center text-gray-400 text-sm">
             © 2024 Coupon Saver BD. All rights reserved.
-            <a
-              href="https://linkedin.com/in/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:underline ml-1"
-            >
-              Your Profile
-            </a>
           </p>
         </div>
       </div>
