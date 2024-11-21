@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { FaStar } from "react-icons/fa"; // React Icons (for stars)
+import { FaCircle, FaStar } from "react-icons/fa";
 import ReactRating from "react-rating";
 import { Link } from "react-router-dom";
 const SinglecolCard = ({ data }) => {
@@ -11,7 +11,7 @@ const SinglecolCard = ({ data }) => {
           key={brand._id}
           className="bg-white py-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-4 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-4 items-center relative">
             {/* Brand Logo Section */}
             <div className="flex flex-col items-center space-x-4">
               <img
@@ -54,7 +54,15 @@ const SinglecolCard = ({ data }) => {
                   View Coupons
                 </button>
               </Link>
-              <p className="mt-2 text-sm text-gray-500">Coupons:</p>
+            </div>
+
+            <div className="absolute top-0 right-5">
+              {brand.isSaleOn && (
+                <div className="flex gap-3 items-center">
+                  <FaCircle className="text-green-600 text-lg"></FaCircle>
+                  <p className="text-lg font-bold">Sale is On</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@ const Brands = () => {
       <div className="w-full mx-auto mt-1 bg-gradient-to-r from-teal-400 to-cyan-600 h-[300px] rounded-xl text-white py-4 px-6 ">
         <div className="mt-20">
           <h1 className="text-2xl md:text-4xl font-semibold text-center">
-            Explore Our All Brands and Find Your Destiny
+            Explore Our All Brands and Find Your Best Coupon
           </h1>
           <h2 className="w-11/12 mx-auto mt-5 text-center text-sm sm:text-base md:text-lg lg:w-8/12">
             Discover a diverse range of top brands, each offering unique

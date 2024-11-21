@@ -7,10 +7,10 @@ import Register from "../Pages/Register";
 import Coupon from "../Pages/Coupon";
 import MyProfile from "../Pages/MyProfile";
 import UpdateProfile from "../Pages/UpdateProfile";
-import About from "../Pages/About";
 import PrivetRouts from "./PrivetRouts";
 import ForgetPassWord from "../Pages/ForgetPassWord";
 import ErrorPage from "../Pages/ErrorPage";
+import About from "../Components/About";
 
 const router = createBrowserRouter([
   {
