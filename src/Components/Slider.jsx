@@ -1,8 +1,8 @@
-import img1 from "../assets/Tech Haven.webp";
-import img2 from "../assets/Pet World.png";
-import img3 from "../assets/Book-Nook.webp";
-import img4 from "../assets/Fit Gear Pro.webp";
-import img5 from "../assets/Outdoor Gear Co.webp";
+import img1 from "../assets/c1.webp";
+import img2 from "../assets/c2.webp";
+import img3 from "../assets/c3.webp";
+import img4 from "../assets/c4.webp";
+import img5 from "../assets/c5.webp";
 
 const Slider = () => {
   return (

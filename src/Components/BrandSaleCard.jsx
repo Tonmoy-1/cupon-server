@@ -1,11 +1,18 @@
 /* eslint-disable react/prop-types */
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 const BrandSaleCard = ({ data }) => {
   const saleBrands = data.filter((brand) => brand.isSaleOn);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div className="grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3  gap-6 p-4">
       {saleBrands.map((brand) => (
         <div
+          data-aos="fade-left"
           key={brand._id}
           className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 border-gray-300 border-2"
         >
